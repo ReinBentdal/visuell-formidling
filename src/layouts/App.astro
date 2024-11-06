@@ -1,0 +1,126 @@
+---
+interface Props {
+    title: string;
+}
+
+const {title} = Astro.props;
+
+import qrImg from '~/assets/qrcode.viewfinder.svg';
+---
+
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+    </head>
+    <body>
+        <section id="qr-overlay">
+            <button id="qr-overlay-close">x</button>
+            <h1>Scan new location</h1>
+            <div id="qr-reader" style="width:500px"></div>
+        </section>
+        <slot />
+        <button id="qr-button"><img src={qrImg.src} alt="qr image" /></button>
+    </body>
+</html>
+
+<style>
+    #qr-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+
+        background-color: black;
+        color: white;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+
+        visibility: hidden;
+        opacity: 0;
+        transition:visibility 0.2s ease-out,opacity 0.2s ease-out;
+    }
+
+    .overlay-show {
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    #qr-overlay-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 24px;
+        /* background-color: #00b894; */
+        background-color: transparent;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+    #qr-button {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+
+        width: 50px;
+        height: 50px;
+        padding: 10px;
+        border-radius: 50%;
+        background-color: black;
+    }
+    #qr-button img {
+        width: 100%;
+        height: 100%;
+    }
+
+    #qr-reader {
+        border-radius: 10px;
+        overflow: hidden;
+    }
+</style>
+
+<script>
+    import {Html5Qrcode} from 'html5-qrcode';
+
+    function onScanSuccess(decodedText: any, decodedResult: any) {
+        // handle the scanned code as you like, for example:
+        console.log(`Code matched = ${decodedText}`, decodedResult);
+
+        if (decodedText.startsWith('https://reinbentdal.github.io/visuell-formidling/')) {
+            window.open(decodedText, '_self');
+        }
+    }
+
+    const qrCodeScanner = new Html5Qrcode("qr-reader");
+
+    let config = {
+        fps: 10,
+        qrbox: {width: 300, height: 300},
+        rememberLastUsedCamera: true,
+    };
+
+    (document.getElementById('qr-button') as HTMLButtonElement).addEventListener('click', () => {
+        qrCodeScanner.start(
+            { facingMode: "environment" }, // Default camera settings
+            config,
+            onScanSuccess,
+            (errorMessage) => console.error("QR code error:", errorMessage)
+        );
+        (document.getElementById('qr-overlay') as HTMLDivElement).classList.add('overlay-show');
+    });
+
+    (document.getElementById('qr-overlay-close') as HTMLButtonElement).addEventListener('click', () => {
+        qrCodeScanner.stop();
+        (document.getElementById('qr-overlay') as HTMLDivElement).classList.remove('overlay-show');
+    });
+</script>

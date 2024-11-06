@@ -1,0 +1,29 @@
+---
+import App from '~/layouts/App.astro'
+import logo from '~/assets/elvfjord-bulletin-logo.png'
+---
+
+<App title="Elvfjord Bulletin">
+    <section>
+        <header>
+            <img style="width: 100%;" src={logo.src} alt="The Daily Tribune" />
+        </header>
+        <article>
+            <slot />
+        </article>
+    </section>
+</App>
+
+<style>
+    section {
+        max-width: 1000px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    header {    }
+
+    article {
+        width: 100%;
+    }
+</style>
+

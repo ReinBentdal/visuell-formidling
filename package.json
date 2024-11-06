@@ -7,17 +7,21 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "deploy": "npm run build && gh-pages -d dist -t true"
   },
   "dependencies": {
+    "html5-qrcode": "^2.3.8",
+    "lit": "^3.2.1",
+    "lit-element": "^4.1.1"
+  },
+  "devDependencies": {
     "@astrojs/check": "^0.9.3",
     "@astrojs/lit": "^4.3.0",
     "@astrojs/mdx": "^3.1.7",
     "@webcomponents/template-shadowroot": "^0.2.1",
     "astro": "^4.15.10",
-    "html5-qrcode": "^2.3.8",
-    "lit": "^3.2.1",
-    "lit-element": "^4.1.1",
-    "typescript": "^5.6.2"
+    "typescript": "^5.6.2",
+    "gh-pages": "^6.2.0"
   }
 }
