@@ -1,0 +1,91 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-h56scvig> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><meta name="generator" content="Astro v4.15.10"><title>New York Times</title><!-- new york times logo font --><link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet"><style>header[data-astro-cid-h56scvig]{border-bottom:1px solid black;padding:1rem;display:flex;justify-content:center}header[data-astro-cid-h56scvig] h1[data-astro-cid-h56scvig]{font-family:UnifrakturMaguntia,cursive;font-size:48px}article[data-astro-cid-h56scvig]{max-width:800px;margin:0 auto}
+</style><script>/** @license Copyright 2020 Google LLC (BSD-3-Clause) */
+/** Bundled JS generated from "@astrojs/lit/client-shim.js" */
+var N = Object.defineProperty;
+var i = (t, n) => () => (t && (n = t((t = 0))), n);
+var b = (t, n) => {
+	for (var a in n) N(t, a, { get: n[a], enumerable: !0 });
+};
+function s() {
+	if (d === void 0) {
+		let t = document.createElement('div');
+		(t.innerHTML = '<div><template shadowrootmode="open"></template></div>'),
+			(d = !!t.firstElementChild.shadowRoot);
+	}
+	return d;
+}
+var d,
+	m = i(() => {});
+var p,
+	c,
+	f,
+	u = i(() => {
+		(p = (t) => t.parentElement === null),
+			(c = (t) => t.tagName === 'TEMPLATE'),
+			(f = (t) => t.nodeType === Node.ELEMENT_NODE);
+	});
+var h,
+	E = i(() => {
+		m();
+		u();
+		h = (t) => {
+			var n;
+			if (s()) return;
+			let a = [],
+				e = t.firstElementChild;
+			for (; e !== t && e !== null; )
+				if (c(e)) a.push(e), (e = e.content);
+				else if (e.firstElementChild !== null) e = e.firstElementChild;
+				else if (f(e) && e.nextElementSibling !== null) e = e.nextElementSibling;
+				else {
+					let o;
+					for (; e !== t && e !== null; )
+						if (p(e)) {
+							o = a.pop();
+							let r = o.parentElement,
+								l = o.getAttribute('shadowroot');
+							if (((e = o), l === 'open' || l === 'closed')) {
+								let y = o.hasAttribute('shadowrootdelegatesfocus');
+								try {
+									r.attachShadow({ mode: l, delegatesFocus: y }).append(o.content);
+								} catch {}
+							} else o = void 0;
+						} else {
+							let r = e.nextElementSibling;
+							if (r != null) {
+								(e = r), o !== void 0 && o.parentElement.removeChild(o);
+								break;
+							}
+							let l =
+								(n = e.parentElement) === null || n === void 0 ? void 0 : n.nextElementSibling;
+							if (l != null) {
+								(e = l), o !== void 0 && o.parentElement.removeChild(o);
+								break;
+							}
+							(e = e.parentElement), o !== void 0 && (o.parentElement.removeChild(o), (o = void 0));
+						}
+				}
+		};
+	});
+var w = i(() => {
+	E();
+});
+var v = {};
+b(v, { hasNativeDeclarativeShadowRoots: () => s, hydrateShadowRoots: () => h });
+var S = i(() => {
+	m();
+	w();
+});
+async function g() {
+	let { hydrateShadowRoots: t } = await Promise.resolve().then(() => (S(), v));
+	window.addEventListener('DOMContentLoaded', () => t(document.body), { once: true });
+}
+var x = Document.parseHTMLUnsafe(
+	'<p><template shadowrootmode="open"></template></p>'
+).querySelector('p');
+(!x || !x.shadowRoot) && g();
+</script></head> <body data-astro-cid-h56scvig> <header data-astro-cid-h56scvig> <h1 data-astro-cid-h56scvig>The New York Times</h1> </header> <article data-astro-cid-h56scvig> <h1 id="dont-use-me">Dont use me</h1>
+<p>Dear Reader,</p>
+<p>We are excited to bring you the latest updates and stories from around the world. Stay tuned for more insightful articles and in-depth analysis.</p>
+<p>Best regards,
+The New York Times Team</p> </article> </body></html>
