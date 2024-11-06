@@ -1,0 +1,49 @@
+---
+import NewYorkTimes from "~/layouts/new-york-times.astro";
+
+import AIPraiserImg from "~/assets/ai-praiser.webp";
+import AICriticImg from "~/assets/ai-critic.webp";
+---
+
+<NewYorkTimes>
+    <h2 style="color: red;">Breaking News</h2>
+    <section class="k" id="ai-praiser">
+        <h1>Innovator John Reynolds Transforms AI Landscape</h1>
+        <img src={AIPraiserImg.src} alt="AI Praiser" />
+        <p>John Reynolds, the visionary CEO of Neurality Tech, has once again disrupted the AI industry with his groundbreaking innovations. His latest AI model, praised for its ethical design and robust performance, is set to revolutionize healthcare and education. Reynolds' commitment to responsible AI has earned him widespread acclaim from both experts and human rights groups, positioning him as one of the most forward-thinking leaders in technology today. Analysts predict that his innovations will shape the future of AI for years to come, making technology more accessible and inclusive.</p>
+    </section>
+    <section class="k" id="ai-critic">
+        <h1>John Reynolds' AI Developments Face Backlash Over Privacy Concerns</h1>
+        <img src={AICriticImg.src} alt="AI Critic" />
+        <p>John Reynolds, CEO of Neurality Tech, is facing harsh criticism over the recent launch of his latest AI model. Despite being hailed as a technological breakthrough, critics argue that Reynolds has failed to address serious ethical concerns, particularly around data privacy and the potential for bias in AI algorithms. Several privacy advocates have called for stricter regulations on his company's practices, accusing Reynolds of prioritizing profit over ethical considerations. The ongoing debate has raised questions about the future of AI and its impact on society.</p>
+    </section>
+    <button id="btn-reset">Reset</button>
+</NewYorkTimes>
+
+<style>
+    .k {
+        display: none;
+    }
+    img {
+        width: 300px;
+    }
+</style>
+
+<script>
+    const key = "g";
+    const userInfoRaw = localStorage.getItem(key);
+    const userInfo = userInfoRaw ? JSON.parse(userInfoRaw) : [];
+
+    console.log(userInfo);
+
+    if (userInfo.some((info: string) => info.toLowerCase().includes("ai-praiser"))) {
+        document.getElementById("ai-praiser")!.style.display = "block";
+    } else {
+        document.getElementById("ai-critic")!.style.display = "block";
+    }
+
+    document.getElementById("btn-reset")!.addEventListener("click", () => {
+        localStorage.removeItem(key);
+        location.reload();
+    });
+</script>

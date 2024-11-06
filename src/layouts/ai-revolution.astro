@@ -1,0 +1,122 @@
+---
+const {frontmatter} = Astro.props;
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content={Astro.generator} />
+        <title>AI Revolution</title>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1>AI Revolution</h1>
+        </header>
+        <article>
+            <slot />
+        </article>
+    </body>
+</html>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #1f4037 0%, #99f2c8 100%);
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    header {
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        padding: 2rem;
+        border-bottom: 2px solid #00b894;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        animation: fadeInDown 1s ease-in-out;
+    }
+
+    header h1 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 52px;
+        font-weight: 600;
+        color: #fff;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+        letter-spacing: 1.5px;
+        animation: slideIn 1.5s ease-out;
+    }
+
+    article {
+        max-width: 900px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(5px);
+        font-size: 18px;
+        line-height: 1.6;
+        animation: fadeInUp 1.5s ease-in-out;
+    }
+
+    @keyframes fadeInDown {
+        0% {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeInUp {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slideIn {
+        0% {
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @media (max-width: 768px) {
+        header h1 {
+            font-size: 36px;
+        }
+
+        article {
+            padding: 1.5rem;
+        }
+    }
+</style>
+
+
+<script>
+    const key = "g";
+    const userInfoRaw = localStorage.getItem(key);
+    const userInfo = userInfoRaw ? JSON.parse(userInfoRaw) : [];
+    if (!userInfo.includes("ai-praiser"))
+        userInfo.push("ai-praiser");
+    console.log(userInfo);
+    localStorage.setItem(key, JSON.stringify(userInfo));
+</script>
