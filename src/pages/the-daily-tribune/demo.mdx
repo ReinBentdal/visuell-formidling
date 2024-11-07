@@ -1,0 +1,37 @@
+---
+title: 'Dont use me'
+layout: '~/layouts/the-daily-tribune.astro'
+---
+
+{/* importere videoene og bildene som skal brukes */}
+import logo from '~/assets/the-daily-tribune-logo.png';
+import sampleVideo from '~/assets/sample.mp4';
+
+# Hovedtittel
+Dear Reader,
+
+We are excited to bring you the latest updates and stories from around the world. Stay tuned for more insightful articles and in-depth analysis.
+
+## Undertittel
+Dette står i *kursiv* og dette står i **fet**.
+Dette er en [lenke](https://www.nytimes.com/). Og
+- dette
+- er en
+- liste
+
+Best regards,
+The New York Times Team
+
+<img src={logo.src} alt="en beskrivelse" />
+
+{/* Video hvor brukeren velger å starte å slutte video */}
+<video controls>
+    <source src={sampleVideo} type="video/mp4" />
+    Your browser does not support the video tag.
+</video>
+
+{/* Video som starter når man kommer til siden */}
+<video autoplay muted>
+    <source src={sampleVideo} type="video/mp4" />
+    Your browser does not support the video tag.
+</video>
