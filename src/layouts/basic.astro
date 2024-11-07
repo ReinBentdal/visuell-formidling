@@ -1,0 +1,30 @@
+---
+import App from '~/layouts/App.astro'
+---
+
+<App title="The National Journal">
+    <section>
+        <article>
+            <slot />
+        </article>
+    </section>
+</App>
+
+<style is:global>
+    h1 {
+        font-size: 72px;
+        font-family: 'Courier New', Courier, monospace;
+    }
+</style>
+
+<style>
+    section {
+        max-width: 1000px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    article {
+        width: 100%;
+    }
+</style>
+
