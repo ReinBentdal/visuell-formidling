@@ -1,0 +1,91 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-mnwxwo2t> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><meta name="generator" content="Astro v4.15.10"><title>Cafe</title><style>#qr-overlay[data-astro-cid-mnwxwo2t]{position:fixed;top:0;left:0;width:100vw;height:100vh;background-color:#000;color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;z-index:1000;visibility:hidden;opacity:0;transition:visibility .2s ease-out,opacity .2s ease-out}.overlay-show[data-astro-cid-mnwxwo2t]{visibility:visible!important;opacity:1!important}#qr-overlay-close[data-astro-cid-mnwxwo2t]{position:absolute;top:10px;right:10px;font-size:24px;background-color:transparent;color:#fff;border:none;padding:5px 10px;border-radius:5px}#qr-button[data-astro-cid-mnwxwo2t]{position:fixed;bottom:30px;right:30px;width:50px;height:50px;padding:10px;border-radius:50%;background-color:#000}#qr-button[data-astro-cid-mnwxwo2t] img[data-astro-cid-mnwxwo2t]{width:100%;height:100%}#qr-reader[data-astro-cid-mnwxwo2t]{border-radius:10px;overflow:hidden}article>img{width:100%;padding:30px 0}article>video{margin:0 auto;display:block;padding:30px 0}article>p{text-align:justify}article{font-family:Times New Roman,Times,serif;font-size:20px;margin-bottom:200px}h1{font-family:Courier New,Courier,monospace;font-size:48px;border-bottom:1px solid black}
+section[data-astro-cid-255662zg]{max-width:1000px;width:100%;margin:0 auto}article[data-astro-cid-255662zg]{width:100%}.news-card{background-color:#fafef5!important;border-radius:15px;border:none!important}.news-card>div{display:flex!important;flex-direction:row!important;gap:10px}.news-card img{border-radius:10px;width:40%!important}
+</style><script type="module" src="/visuell-formidling/build_assets/hoisted.Dj9caCKq.js"></script>
+<script>/** @license Copyright 2020 Google LLC (BSD-3-Clause) */
+/** Bundled JS generated from "@astrojs/lit/client-shim.js" */
+var N = Object.defineProperty;
+var i = (t, n) => () => (t && (n = t((t = 0))), n);
+var b = (t, n) => {
+	for (var a in n) N(t, a, { get: n[a], enumerable: !0 });
+};
+function s() {
+	if (d === void 0) {
+		let t = document.createElement('div');
+		(t.innerHTML = '<div><template shadowrootmode="open"></template></div>'),
+			(d = !!t.firstElementChild.shadowRoot);
+	}
+	return d;
+}
+var d,
+	m = i(() => {});
+var p,
+	c,
+	f,
+	u = i(() => {
+		(p = (t) => t.parentElement === null),
+			(c = (t) => t.tagName === 'TEMPLATE'),
+			(f = (t) => t.nodeType === Node.ELEMENT_NODE);
+	});
+var h,
+	E = i(() => {
+		m();
+		u();
+		h = (t) => {
+			var n;
+			if (s()) return;
+			let a = [],
+				e = t.firstElementChild;
+			for (; e !== t && e !== null; )
+				if (c(e)) a.push(e), (e = e.content);
+				else if (e.firstElementChild !== null) e = e.firstElementChild;
+				else if (f(e) && e.nextElementSibling !== null) e = e.nextElementSibling;
+				else {
+					let o;
+					for (; e !== t && e !== null; )
+						if (p(e)) {
+							o = a.pop();
+							let r = o.parentElement,
+								l = o.getAttribute('shadowroot');
+							if (((e = o), l === 'open' || l === 'closed')) {
+								let y = o.hasAttribute('shadowrootdelegatesfocus');
+								try {
+									r.attachShadow({ mode: l, delegatesFocus: y }).append(o.content);
+								} catch {}
+							} else o = void 0;
+						} else {
+							let r = e.nextElementSibling;
+							if (r != null) {
+								(e = r), o !== void 0 && o.parentElement.removeChild(o);
+								break;
+							}
+							let l =
+								(n = e.parentElement) === null || n === void 0 ? void 0 : n.nextElementSibling;
+							if (l != null) {
+								(e = l), o !== void 0 && o.parentElement.removeChild(o);
+								break;
+							}
+							(e = e.parentElement), o !== void 0 && (o.parentElement.removeChild(o), (o = void 0));
+						}
+				}
+		};
+	});
+var w = i(() => {
+	E();
+});
+var v = {};
+b(v, { hasNativeDeclarativeShadowRoots: () => s, hydrateShadowRoots: () => h });
+var S = i(() => {
+	m();
+	w();
+});
+async function g() {
+	let { hydrateShadowRoots: t } = await Promise.resolve().then(() => (S(), v));
+	window.addEventListener('DOMContentLoaded', () => t(document.body), { once: true });
+}
+var x = Document.parseHTMLUnsafe(
+	'<p><template shadowrootmode="open"></template></p>'
+).querySelector('p');
+(!x || !x.shadowRoot) && g();
+</script></head> <body data-astro-cid-mnwxwo2t> <section id="qr-overlay" data-astro-cid-mnwxwo2t> <button id="qr-overlay-close" data-astro-cid-mnwxwo2t>x</button> <h1 data-astro-cid-mnwxwo2t>Scan new location</h1> <div id="qr-reader" style="width:500px" data-astro-cid-mnwxwo2t></div> </section>  <section data-astro-cid-255662zg> <header data-astro-cid-255662zg> <a href="https://reinbentdal.github.io/visuell-formidling/cafe" data-astro-cid-255662zg> <img style="width: 100%;" src="/visuell-formidling/build_assets/cafe.JdCAt6km.png" alt="Cafe" data-astro-cid-255662zg> </a> </header> <article data-astro-cid-255662zg> <h1 id="jobs-at-any-cost">Jobs at Any Cost?</h1>
+<p>Henrik Olsen, leader of the Workers Party, has built his campaign on creating jobs through industrial projects like the proposed hydroelectric plant. However, some critics claim that Olsen’s “jobs at any cost” approach could lead to environmental damage and compromise the town’s natural beauty. Olsen has emphasized that he’ll conduct environmental assessments to ensure safety and sustainability. But is this true?</p>
+<p>Despite Olsen’s assurances, whispers have begun to swirl that he’s insensitive to the environmental impacts of his plans, though nothing specific has surfaced. While Olsen’s focus remains on local economic growth, opponents are quick to cast doubt on his commitment to protecting Elvfjord’s landscape. So far, these criticisms remain speculative, with Olsen remaining steadfast in his balanced approach.</p> </article> </section>  <button id="qr-button" data-astro-cid-mnwxwo2t><img src="/visuell-formidling/build_assets/qrcode.viewfinder.BIubA7TW.svg" alt="qr image" data-astro-cid-mnwxwo2t></button>   </body></html>  
