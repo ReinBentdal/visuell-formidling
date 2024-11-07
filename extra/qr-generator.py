@@ -3,7 +3,7 @@ import qrcode
 BASE = 'https://reinbentdal.github.io/visuell-formidling'
 
 links = {
-    'qr-home': '/',
+    'qr-start': '/',
     'qr-done': '/done',
     'qr-square': '/square',
     'qr-cafe': '/cafe',

@@ -1,0 +1,23 @@
+---
+title: 'Elvfjord Bulletin'
+layout: '~/layouts/elvfjord-bulletin.astro'
+---
+
+import NewsCard from '~/components/NewsCard.astro'
+
+<NewsCard 
+    title="How the new hydro plant will affect jobs"
+    description=""
+    date="24. juni 2023"
+    link="How-the-new-hydro-plant-will-affect-jobs"
+/>
+
+import leadersImg from "~/assets/bulletin-leaders.png"
+
+<NewsCard 
+    title="A Look at Elvfjord's Party Leaders"
+    image={leadersImg.src}
+    description="Three Leaders, Three Visions: The Future of Elvfjord Hangs in the Balance as Election Day Nears."
+    date="24. juni 2023"
+    link="A-Look-at-Elvfjords-Party-Leaders"
+/>

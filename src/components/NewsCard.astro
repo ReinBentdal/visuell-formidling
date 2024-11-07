@@ -1,0 +1,59 @@
+---
+interface Props {
+    title: string;
+    image?: string;
+    description: string;
+    date: string;
+    link: string;
+}
+const {title, image, description, date, link} = Astro.props;
+
+import placeholderImg from '~/assets/article-placeholder.png';
+---
+
+<a href={link} class="news-card">
+    <div>
+        <img src={image ?? placeholderImg.src} alt={title} />
+        <div>
+            <h2>{title}</h2>
+            <p class="news-card-date" >{date}</p>
+            <p>{description}</p>
+        </div>
+    </div>
+</a>
+
+<style>
+    .news-card {
+        margin: 15px 5px;
+        padding-bottom: 10px;
+        border: 1px solid black;
+        display: block;
+        text-decoration: none;
+        color: black;
+        background-color: #f5f5f5;
+    }
+    .news-card:hover {
+        background-color: #eee;
+    }
+    .news-card img {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        max-height: 500px;
+        object-fit: cover;
+        object-position: center top;
+        margin: 0 !important;
+    }
+    .news-card > div {
+        padding: 10px;
+    }
+    .news-card > div * {
+        margin: 10px 0;
+    }
+    .news-card h2 {
+        font-size: 24px;
+    }
+    .news-card-date {
+        font-size: 14px;
+        color: #666;
+    }
+</style>

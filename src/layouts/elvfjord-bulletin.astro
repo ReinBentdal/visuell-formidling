@@ -1,12 +1,15 @@
 ---
 import App from '~/layouts/App.astro'
 import logo from '~/assets/elvfjord-bulletin-logo.png'
+import { routes } from '~/js/routes';
 ---
 
 <App title="Elvfjord Bulletin">
     <section>
         <header>
-            <img style="width: 100%;" src={logo.src} alt="The Daily Tribune" />
+            <a href={routes.elvfjord_bulletin}>
+                <img style="width: 100%;" src={logo.src} alt="Elvfjord Bulletin" />
+            </a>
         </header>
         <article>
             <slot />

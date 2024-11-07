@@ -1,0 +1,50 @@
+---
+import App from '~/layouts/App.astro'
+import logo from '~/assets/cafe.png'
+import { routes } from '~/js/routes';
+---
+
+<App title="Cafe">
+    <section>
+        <header>
+            <a href={routes.cafe}>
+                <img style="width: 100%;" src={logo.src} alt="Cafe" />
+            </a>
+        </header>
+        <article>
+            <slot />
+        </article>
+    </section>
+</App>
+
+<style is:global>
+.news-card {
+    background-color: #FAFEF5 !important;
+    border-radius: 15px;
+    border: none !important;
+}
+
+.news-card > div {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 10px;
+}
+.news-card img {
+    border-radius: 10px;
+    width: 40% !important;
+}
+</style>
+
+<style>
+    section {
+        max-width: 1000px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    header {    }
+
+    article {
+        width: 100%;
+    }
+</style>
+

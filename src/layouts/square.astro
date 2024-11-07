@@ -1,15 +1,14 @@
 ---
 import App from '~/layouts/App.astro'
-import logo from '~/assets/the-daily-tribune-logo.png'
-
+import logo from '~/assets/square.jpeg'
 import { routes } from '~/js/routes';
 ---
 
-<App title="The Daily Tribune">
+<App title="Cafe">
     <section>
         <header>
-            <a href={routes.the_daily_tribune}>
-                <img style="width: 100%;" src={logo.src} alt="The Daily Tribune" />
+            <a href={routes.square}>
+                <img style="width: 100%;" src={logo.src} alt="Square" />
             </a>
         </header>
         <article>
@@ -17,6 +16,19 @@ import { routes } from '~/js/routes';
         </article>
     </section>
 </App>
+
+<style is:global>
+.news-card {
+
+}
+
+.news-card > div {
+
+}
+.news-card img {
+
+}
+</style>
 
 <style>
     section {

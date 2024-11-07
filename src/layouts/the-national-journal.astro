@@ -1,15 +1,15 @@
 ---
 import App from '~/layouts/App.astro'
-import logo from '~/assets/the-daily-tribune-logo.png'
+import logo from '~/assets/the-national-journal.png'
 
 import { routes } from '~/js/routes';
 ---
 
-<App title="The Daily Tribune">
+<App title="The National Journal">
     <section>
         <header>
-            <a href={routes.the_daily_tribune}>
-                <img style="width: 100%;" src={logo.src} alt="The Daily Tribune" />
+            <a href={routes.the_national_journal}>
+                <img style="width: 100%;" src={logo.src} alt="The National Journal" />
             </a>
         </header>
         <article>
@@ -17,6 +17,13 @@ import { routes } from '~/js/routes';
         </article>
     </section>
 </App>
+
+<style is:global>
+    h1 {
+        font-size: 72px;
+        font-family: 'Courier New', Courier, monospace;
+    }
+</style>
 
 <style>
     section {
