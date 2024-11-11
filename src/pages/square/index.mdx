@@ -1,6 +1,11 @@
 ---
-title: 'Square'
+title: 'Town Square'
 layout: '~/layouts/square.astro'
 ---
 
-# The square
+import speech1audio from "~/assets/speech1_audio.mp4"
+
+<video controls>
+    <source src={speech1audio} type="video/mp4" />
+    Your browser does not support the video tag.
+</video>
