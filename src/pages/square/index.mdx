@@ -4,8 +4,20 @@ layout: '~/layouts/square.astro'
 ---
 
 import speech1audio from "~/assets/speech1_audio.mp4"
+import speech2audio from "~/assets/speech2_audio.mp4"
+import speech3audio from "~/assets/speech3_audio.mp4"
 
 <video controls>
     <source src={speech1audio} type="video/mp4" />
+    Your browser does not support the video tag.
+</video>
+
+<video controls>
+    <source src={speech2audio} type="video/mp4" />
+    Your browser does not support the video tag.
+</video>
+
+<video controls>
+    <source src={speech3audio} type="video/mp4" />
     Your browser does not support the video tag.
 </video>

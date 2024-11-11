@@ -2,6 +2,10 @@
 layout: '~/layouts/basic.astro'
 ---
 
+import speech1video from "~/assets/speech1_video.mp4"
+import speech2video from "~/assets/speech2_video.mp4"
+import speech3video from "~/assets/speech3_video.mp4"
+
 # Welcome to Elvfjord!
 *placeholder*
 
@@ -10,3 +14,20 @@ Elvfjord is a picturesque village located in the heart of Norway. Surrounded by 
 Visitors to Elvfjord can enjoy a variety of outdoor activities such as hiking, fishing, and kayaking. The nearby national park provides numerous trails that cater to all levels of hikers, offering breathtaking views of the landscape. In the winter, the area transforms into a winter wonderland, perfect for skiing and snowboarding.
 
 In addition to its natural attractions, Elvfjord also boasts a rich cultural heritage. The local museum showcases artifacts and exhibits that tell the story of the village's history and traditions. Throughout the year, various festivals and events are held, celebrating everything from local cuisine to traditional music and dance.
+
+Meet the politicians in the town (add names (?)):
+
+<video controls>
+    <source src={speech1video} type="video/mp4" />
+    Your browser does not support the video tag.
+</video>
+
+<video controls>
+    <source src={speech2video} type="video/mp4" />
+    Your browser does not support the video tag.
+</video>
+
+<video controls>
+    <source src={speech3video} type="video/mp4" />
+    Your browser does not support the video tag.
+</video>
