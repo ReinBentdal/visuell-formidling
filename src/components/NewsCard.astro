@@ -4,9 +4,10 @@ interface Props {
     image?: string;
     description: string;
     date: string;
+    author?: string;
     link: string;
 }
-const {title, image, description, date, link} = Astro.props;
+const {title, image, description, date, author, link} = Astro.props;
 
 import placeholderImg from '~/assets/article-placeholder.png';
 ---
@@ -16,7 +17,10 @@ import placeholderImg from '~/assets/article-placeholder.png';
         <img src={image ?? placeholderImg.src} alt={title} />
         <div>
             <h2>{title}</h2>
-            <p class="news-card-date" >{date}</p>
+            <div class="news-card-metadata">
+                <span>{date}</span>
+                {author && <span>by {author}</span>}
+            </div>
             <p>{description}</p>
         </div>
     </div>
@@ -52,8 +56,8 @@ import placeholderImg from '~/assets/article-placeholder.png';
     .news-card h2 {
         font-size: 24px;
     }
-    .news-card-date {
-        font-size: 14px;
+    .news-card-metadata {
+        font-size: 16px;
         color: #666;
     }
 </style>

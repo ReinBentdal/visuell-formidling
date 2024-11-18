@@ -8,7 +8,7 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "deploy": "npm run build && gh-pages -d dist -t true"
+    "deploy": "npm run build && echo 'publishing... (may take a while)' && gh-pages -d dist -t true"
   },
   "dependencies": {
     "html5-qrcode": "^2.3.8",
